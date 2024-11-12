@@ -1,10 +1,9 @@
-import { useWeather } from 'contexts/weatherContext';
+// import { useWeather } from 'contexts/weatherContext';
 import css from './WeatherCard.module.scss';
 
 const WeatherCard = () => {
-    const {}
   return (
-    <li className="{css.weather__item}">
+    <li className={css.weather__item}>
       <div className={css['weather-box']}>
         <p className={css.weather__text}>Prague</p>
         <p className={css.weather__text}>Czech Republic</p>
@@ -17,30 +16,28 @@ const WeatherCard = () => {
         <p className={css.day__date}>13.10.2023</p>
         <p className={css.day__weekday}>Friday</p>
       </div>
-      <img src={} alt={} className={css.weather__icon} />
-      <p className={css["weather__text--xl"]}>22℃</p>
-        <ul className={css["weather__list"]}>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--tiny"]}>
-        See more
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
-        </button>
-    </li>
-        </ul>
+      <img src={'lalal'} alt={'lalal'} className={css.weather__icon} />
+      <p className={css['weather__text--xl']}>22℃</p>
+      <ul className={css['menu']}>
+        <li className={css.menu__item}>
+          <button className={css['menu__btn--xs']}>
+            <img className={css.menu__pic} src={'lala'} alt={'lala'} />
+          </button>
+        </li>
+        <li className={css.menu__item}>
+          <button className={css['menu__btn--xs']}>
+            <img className={css.menu__pic} src={'lala'} alt={'lala'} />
+          </button>
+        </li>
+        <li className={css.menu__item}>
+          <button className={css['menu__btn--tiny']}>See more</button>
+        </li>
+        <li className={css.menu__item}>
+          <button className={css['menu__btn--xs']}>
+            <img className={css.menu__pic} src={'l'} alt={'lal'} />
+          </button>
+        </li>
+      </ul>
     </li>
   );
 };
