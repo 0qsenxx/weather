@@ -2,7 +2,7 @@ import { useWeather } from 'contexts/weatherContext';
 import css from './WeatherCard.module.scss';
 
 const WeatherCard = () => {
-    const {}
+    // const {}
   return (
     <li className="{css.weather__item}">
       <div className={css['weather-box']}>
