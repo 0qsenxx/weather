@@ -1,4 +1,4 @@
-import css from './App.module.css';
+import css from './Header.module.scss';
 import { useState } from 'react';
 
 const Header = () => {
@@ -13,7 +13,9 @@ const Header = () => {
     
       return (
         <>
+        <div className="container">
           <header className={css.header}>
+          
             <div className={css.header__logo} >
     
             </div>
@@ -40,8 +42,9 @@ const Header = () => {
               <button type='button' className={css.signup__button} onClick={isOpenModal}>Sign Up</button>
               <div className={css.signup__user}></div>
             </div>
+           
           </header>
-    
+     </div>
     
           {isOpen ?
             <div className={css.backdrop}>
