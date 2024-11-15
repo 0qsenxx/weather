@@ -1,0 +1,18 @@
+@mixin accent-btn($pr: 18px, $pt: 8px, $fsz: 10px, $fw: 500) {
+  background-color: $accentColor;
+  padding: $pt $pr;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  outline: none;
+  color: $textColor;
+  font-size: $fsz;
+  font-weight: $fw;
+  line-height: normal;
+}
+@mixin text($fsz: 14px, $fw: 500) {
+  font-size: $fsz;
+  font-weight: $fw;
+  line-height: normal;
+  color: $textColor;
+}

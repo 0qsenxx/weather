@@ -1,3 +1,54 @@
+@import '../../sass/utils/_vars.module.scss';
+@import '../../sass/utils/_mixins.module.scss';
+
 .weather__item {
-    
+  background-color: $bgShadowColor;
+}
+.weather__text {
+  @include text();
+  &--lg {
+    @include text(24px);
+  }
+  &--xl {
+    @include text(32px);
+  }
+}
+.weather__btn {
+  @include accent-btn();
+}
+.day {
+  margin-top: 15px;
+  margin-bottom: 22px;
+  &__date {
+    @include text();
+  }
+  &__weekday {
+    @include text();
+  }
+}
+.weather__icon {
+  width: 120px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu__item {
+  width: 30px;
+  &:first-child {
+    margin-right: 16px;
+  }
+  &:nth-child(3) {
+    margin-right: 37px;
+    margin-left: 38px;
+    width: auto;
+  }
+}
+.menu__btn {
+  &--tiny {
+    @include accent-btn(25px, 8px);
+  }
 }
