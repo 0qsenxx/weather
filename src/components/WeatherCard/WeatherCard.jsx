@@ -17,17 +17,17 @@ const WeatherCard = () => {
         <p className={css.day__date}>13.10.2023</p>
         <p className={css.day__weekday}>Friday</p>
       </div>
-      <img src={} alt={} className={css.weather__icon} />
+      <img src={''} alt={''} className={css.weather__icon} />
       <p className={css["weather__text--xl"]}>22℃</p>
         <ul className={css["weather__list"]}>
     <li className={css.weather__item}>
         <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
+            <img className={css.weather__pic} src={''} alt={''} />
         </button>
     </li>
     <li className={css.weather__item}>
         <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
+            <img className={css.weather__pic} src={''} alt={''} />
         </button>
     </li>
     <li className={css.weather__item}>
@@ -37,7 +37,7 @@ const WeatherCard = () => {
     </li>
     <li className={css.weather__item}>
         <button className={css["weather__btn--xs"]}>
-            <img className={css.weather__pic} src={} alt={} />
+            <img className={css.weather__pic} src={''} alt={''} />
         </button>
     </li>
         </ul>
