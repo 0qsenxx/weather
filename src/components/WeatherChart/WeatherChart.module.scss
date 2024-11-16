@@ -1,0 +1,17 @@
+.weatherChartBox {
+  background-color: rgb(232, 232, 232);
+  border-radius: 20px;
+  height: 370px;
+  padding: 18px 25px 25px 25px;
+
+  @media screen and (min-width: 654px) {
+    height: 400px;
+    padding: 20px 35px 25px 39px;
+  }
+
+  @media screen and (min-width: 1170px) {
+    padding: 0 40px 40px 43px;
+    height: 554px;
+    padding: 0 40px 40px 43px;
+  }
+}
