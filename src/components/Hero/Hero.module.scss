@@ -1,0 +1,111 @@
+@import '../../sass/utils/_vars.module.scss';
+
+.hero {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-image: url(../../imgs/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -2;
+  //   &::before {
+  //     background-color: rgba(0, 0, 0, 0.48);
+  //     // width: 100%;
+  //     content: '';
+  //     display: block;
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     z-index: -1;
+  //     pointer-events: none;
+  //   }
+}
+
+.hero__title {
+  color: $bgColor;
+  font-size: 40px;
+  font-weight: 600;
+  display: block;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.hero__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 181px;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 3px;
+    // height: 9vw;
+    height: 144px;
+    background-color: $bgColor;
+    right: 50%;
+    top: 0;
+  }
+}
+.hero__item {
+  max-width: 345px;
+  &:first-child {
+    margin-right: 104px;
+    & p {
+      text-align: right;
+    }
+  }
+}
+.hero__text {
+  color: $bgColor;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  text-align: left;
+}
+.hero__form {
+  margin-top: 137px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+//   pointer-events:painted;
+}
+.hero__input {
+  width: 578px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-top: 13px;
+  padding-bottom: 12px;
+  padding-left: 29px;
+  &::placeholder {
+    color: #878787;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    line-height: normal;
+  }
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+.hero__btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  outline: none;
+  background-color: $accentColor;
+  margin-left: 2px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    width: 25px;
+  }
+}
