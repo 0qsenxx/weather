@@ -1,10 +1,12 @@
-import { useRef } from 'react';
+import { useCallback, useState } from 'react';
+import SearchIcon from '../../imgs/search.png';
 import css from './Hero.module.scss';
 
 const Hero = () => {
+  
   return (
     <section className={css.hero}>
-      <div className={css.container}>
+      <div className={'container'}>
         <h1 className={css.hero__title}>Weather dashboard</h1>
         <ul className={css.hero__list}>
           <li className={css.hero__item}>
@@ -27,7 +29,11 @@ const Hero = () => {
             name="location"
           />
           <button className={css.hero__btn} type="submit">
-            <img className={css.hero__icon} src={'lo'} alt="search icon" />
+            <img
+              className={css.hero__icon}
+              src={SearchIcon}
+              alt="search icon"
+            />
           </button>
         </form>
       </div>

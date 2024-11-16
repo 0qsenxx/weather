@@ -4,14 +4,17 @@ import Hero from './Hero/Hero';
 import WeatherList from './WeatherList/WeatherList';
 import WeatherInfo from './WeatherInfo/WeatherInfo';
 import WeatherChart from './WeatherChart/WeatherChart';
+import Forecast from './Forecast/Forecast';
+import Pets from './Pets/Pets';
+
+
 export const App = () => {
   return (
     <>
-      <WeatherInfo />
-      <WeatherChart />
-      {/* <Header />
-      <Hero />
-      <WeatherList /> */}
+      <Header />
+    <Hero/>
+    <WeatherList/>
+    <Pets/>
     </>
   );
 };

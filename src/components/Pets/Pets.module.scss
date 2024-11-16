@@ -1,0 +1,53 @@
+.pets__title {
+    margin-top: 80px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pets__list {
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+
+// .pets__item {}
+
+.pets__img {
+    width: 270px;
+    height: 208px;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+
+.pets__text {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.pets__btn {
+    border: none;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: inline-flex;
+padding: 10px 30px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+border-radius: 10px;
+background: #FFB36C;
+}
