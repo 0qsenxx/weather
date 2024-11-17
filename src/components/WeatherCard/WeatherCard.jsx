@@ -2,9 +2,19 @@ import { useWeather } from 'contexts/weatherContext';
 import css from './WeatherCard.module.scss';
 
 const WeatherCard = () => {
-    // const {}
+  const currentDate = new Date();
+  const weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+
   return (
-    <li className="{css.weather__item}">
+    <li className={css.weather__item}>
       <div className={css['weather-box']}>
         <p className={css.weather__text}>Prague</p>
         <p className={css.weather__text}>Czech Republic</p>
@@ -14,33 +24,33 @@ const WeatherCard = () => {
         Hourly forecast
       </button>
       <div className={css.day}>
-        <p className={css.day__date}>13.10.2023</p>
-        <p className={css.day__weekday}>Friday</p>
+        <p
+          className={css.day__date}
+        >{`${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}`}</p>
+        <p className={css.day__weekday}>{weekdays[currentDate.getDay()]}</p>
       </div>
       <img src={''} alt={''} className={css.weather__icon} />
-      <p className={css["weather__text--xl"]}>22℃</p>
-        <ul className={css["weather__list"]}>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
+      <p className={css['weather__text--xl']}>22℃</p>
+      <ul className={css['weather__list']}>
+        <li className={css.weather__item}>
+          <button className={css['weather__btn--xs']}>
             <img className={css.weather__pic} src={''} alt={''} />
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
+          </button>
+        </li>
+        <li className={css.weather__item}>
+          <button className={css['weather__btn--xs']}>
             <img className={css.weather__pic} src={''} alt={''} />
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--tiny"]}>
-        See more
-        </button>
-    </li>
-    <li className={css.weather__item}>
-        <button className={css["weather__btn--xs"]}>
+          </button>
+        </li>
+        <li className={css.weather__item}>
+          <button className={css['weather__btn--tiny']}>See more</button>
+        </li>
+        <li className={css.weather__item}>
+          <button className={css['weather__btn--xs']}>
             <img className={css.weather__pic} src={''} alt={''} />
-        </button>
-    </li>
-        </ul>
+          </button>
+        </li>
+      </ul>
     </li>
   );
 };
