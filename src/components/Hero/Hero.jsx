@@ -3,7 +3,30 @@ import SearchIcon from '../../imgs/search.png';
 import css from './Hero.module.scss';
 
 const Hero = () => {
-  
+  const currentDate = new Date();
+  const weekdays = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
   return (
     <section className={css.hero}>
       <div className={'container'}>
@@ -17,7 +40,17 @@ const Hero = () => {
           </li>
           <li className={css.hero__item}>
             <p className={css.hero__text}>
-              October 2023 <br /> Friday, 13th
+              {months[currentDate.getMonth()]} {currentDate.getFullYear()}{' '}
+              <br /> {weekdays[currentDate.getDay()]},{' '}
+              {`${currentDate.getDate()}${
+                currentDate.getDate() === 1
+                  ? 'st'
+                  : currentDate.getDate() === 2
+                  ? 'nd'
+                  : currentDate.getDate() === 3
+                  ? 'rd'
+                  : 'th'
+              }`}
             </p>
           </li>
         </ul>
