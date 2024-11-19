@@ -1,89 +1,158 @@
 @import '../../sass/utils/_vars.module.scss';
 
 .hero {
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 100px;
   background-image: url(../../imgs/hero.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  z-index: -2;
-  //   &::before {
-  //     background-color: rgba(0, 0, 0, 0.48);
-  //     // width: 100%;
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 0;
-  //     z-index: -1;
-  //     pointer-events: none;
-  //   }
+  z-index: 2;
+  &::before {
+    background-color: rgba(0, 0, 0, 0.48);
+    // width: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  @media screen and (min-width: $tabPoint) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 }
 
 .hero__title {
   color: $bgColor;
-  font-size: 40px;
   font-weight: 600;
   display: block;
   text-align: center;
-  margin-bottom: 80px;
+  font-size: 14px;
+  margin-bottom: 35px;
+  @media screen and (min-width: $tabPoint) {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    font-size: 40px;
+    margin-bottom: 80px;
+  }
 }
 
 .hero__list {
   display: flex;
-  align-items: center;
+  // align-items: center;
+  padding-left: 91px;
   justify-content: center;
-  padding-right: 181px;
   position: relative;
+  flex-wrap: wrap;
+  flex-direction: column;
   &::after {
     content: '';
     display: block;
     position: absolute;
-    width: 3px;
     // height: 9vw;
-    height: 144px;
+    width: 2px;
+    height: 80px;
     background-color: $bgColor;
-    right: 50%;
-    top: 0;
+    left: 66px;
+  }
+  @media screen and (min-width: $tabPoint) {
+    padding-right: 76px;
+    padding-left: 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    &::after {
+      // width: 2px;
+      right: 50%;
+      left: auto;
+      top: 0;
+      height: 110px;
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    padding-right: 181px;
+    &::after {
+      width: 3px;
+      height: 144px;
+    }
   }
 }
 .hero__item {
-  max-width: 345px;
+  max-width: 136px;
+  display: block;
   &:first-child {
-    margin-right: 104px;
+    margin-bottom: 20px;
     & p {
-      text-align: right;
+      text-align: left;
+    }
+  }
+  @media screen and (min-width: $tabPoint) {
+    max-width: 172px;
+    display: inline;
+    &:first-child {
+      margin-right: 68px;
+      & p {
+        text-align: right;
+      }
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    max-width: 345px;
+    &:first-child {
+      margin-right: 104px;
     }
   }
 }
 .hero__text {
   color: $bgColor;
-  font-size: 24px;
   font-weight: 500;
   line-height: normal;
   text-align: left;
+  font-size: 10px;
+  @media screen and (min-width: $tabPoint) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    font-size: 24px;
+  }
 }
 .hero__form {
-  margin-top: 137px;
   display: flex;
   align-items: center;
   justify-content: center;
-//   pointer-events:painted;
+  margin-top: 48px;
+  @media screen and (min-width: $pcPoint) {
+    margin-top: 106px;
+  }
+  @media screen and (min-width: $tabPoint) {
+    margin-top: 137px;
+  }
 }
+
 .hero__input {
-  width: 578px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding-top: 13px;
-  padding-bottom: 12px;
-  padding-left: 29px;
+  width: 153px;
+  height: 15px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10.4px;
+  font-size: 6px;
+  border: none;
   &::placeholder {
     color: #878787;
-    font-size: 14px;
+    font-size: 6px;
     font-family: 'Montserrat';
     font-weight: 500;
     line-height: normal;
@@ -92,20 +161,61 @@
   &:active {
     outline: none;
   }
+  @media screen and (min-width: $tabPoint) {
+    width: 373px;
+    height: 27px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding-top: 8px;
+    padding-bottom: 6.6px;
+    padding-left: 19px;
+    font-size: 10px;
+    &::placeholder {
+      font-size: 10px;
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    width: 578px;
+    height: auto;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    padding-left: 29px;
+    font-size: 14px;
+    &::placeholder {
+      font-size: 14px;
+    }
+  }
 }
 .hero__btn {
-  width: 45px;
-  height: 45px;
+  width: 16px;
+  height: 15px;
+  // height: 100%;
   border: none;
   outline: none;
   background-color: $accentColor;
   margin-left: 2px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   & img {
-    width: 25px;
+    width: 9px;
+  }
+  @media screen and (min-width: $tabPoint) {
+    width: 29.4px;
+    height: 27px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    & img {
+      width: 16px;
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    width: 45px;
+    height: 45px;
+    & img {
+      width: 25px;
+    }
   }
 }
