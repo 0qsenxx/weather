@@ -6,15 +6,16 @@ import WeatherInfo from './WeatherInfo/WeatherInfo';
 import WeatherChart from './WeatherChart/WeatherChart';
 import Forecast from './Forecast/Forecast';
 import Pets from './Pets/Pets';
-
+import Nature from './Nature/Nature';
 
 export const App = () => {
   return (
     <>
       <Header />
-    <Hero/>
-    <WeatherList/>
-    <Pets/>
+      <Hero />
+      <WeatherList />
+      <Pets />
+      <Nature />
     </>
   );
 };
