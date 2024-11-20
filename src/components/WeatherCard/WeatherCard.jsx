@@ -1,4 +1,7 @@
 import { useWeather } from 'contexts/weatherContext';
+import HeartIcon from '../../imgs/weatherCardIcons/heart.svg';
+import DeleteIcon from '../../imgs/weatherCardIcons/delete.svg';
+import RefreshIcon from '../../imgs/weatherCardIcons/refresh.svg';
 import css from './WeatherCard.module.scss';
 
 const WeatherCard = () => {
@@ -30,24 +33,40 @@ const WeatherCard = () => {
         <p className={css.day__weekday}>{weekdays[currentDate.getDay()]}</p>
       </div>
       <img src={''} alt={''} className={css.weather__icon} />
-      <p className={css['weather__text--xl']}>22℃</p>
-      <ul className={css['weather__list']}>
-        <li className={css.weather__item}>
-          <button className={css['weather__btn--xs']}>
-            <img className={css.weather__pic} src={''} alt={''} />
+      <p className={css['weather__text--xl']}>22°C</p>
+      <ul className={css['weather-card__list']}>
+        <li className={css['weather-card__item']}>
+          <button className={css['weather__btn--xs']} type="button">
+            <img
+              className={css.weather__pic}
+              src={RefreshIcon}
+              alt="refresh icon"
+            />
           </button>
         </li>
-        <li className={css.weather__item}>
-          <button className={css['weather__btn--xs']}>
-            <img className={css.weather__pic} src={''} alt={''} />
+        <li className={css['weather-card__item']}>
+          <button className={css['weather__btn--xs']} type="button">
+            <img
+              className={css.weather__pic}
+              src={HeartIcon}
+              alt="heart icon"
+            />
           </button>
         </li>
-        <li className={css.weather__item}>
-          <button className={css['weather__btn--tiny']}>See more</button>
+        <li
+          className={`${css['weather-card__item']} ${css['weather-card__btn']}`}
+        >
+          <button className={css['weather__btn--tiny']} type="button">
+            See more
+          </button>
         </li>
-        <li className={css.weather__item}>
-          <button className={css['weather__btn--xs']}>
-            <img className={css.weather__pic} src={''} alt={''} />
+        <li className={css['weather-card__item']}>
+          <button className={css['weather__btn--xs']} type="button">
+            <img
+              className={css.weather__pic}
+              src={DeleteIcon}
+              alt="delete icon"
+            />
           </button>
         </li>
       </ul>

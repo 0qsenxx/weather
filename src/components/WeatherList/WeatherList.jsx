@@ -3,8 +3,8 @@ import css from './WeatherList.module.scss';
 
 const WeatherList = () => {
   return (
-    <section>
-      <ul>
+    <section className={css.weather}>
+      <ul className={css.weather__list}>
         <WeatherCard />
         <WeatherCard />
         <WeatherCard />
