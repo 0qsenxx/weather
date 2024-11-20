@@ -1,4 +1,7 @@
 .pets__title {
+    display: none;
+    @media (min-width: 1170px) {
+        display: block;
     margin-top: 80px;
     color: #000;
     font-family: Montserrat;
@@ -6,16 +9,26 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    }
 }
 
 .pets__list {
-    display: flex;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    gap: 20px;
+    display: none;
+    @media (min-width: 1170px) {
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        gap: 20px;
+        }
+ 
 }
 
-
+// .pets__list .container {
+//     display: none;
+//     @media (min-width: 1170px) {
+//       display: block;
+//         }
+// }
 // .pets__item {}
 
 .pets__img {
@@ -27,6 +40,7 @@
 
 
 .pets__text {
+    margin-top: 20px;
     color: #000;
     font-family: Montserrat;
     font-size: 16px;
@@ -36,6 +50,9 @@
 }
 
 .pets__btn {
+    display: none;
+    @media (min-width: 1170px) {
+        display: block;
     border: none;
     color: #000;
     font-family: Montserrat;
@@ -50,4 +67,5 @@ align-items: center;
 gap: 10px;
 border-radius: 10px;
 background: #FFB36C;
+    }
 }
