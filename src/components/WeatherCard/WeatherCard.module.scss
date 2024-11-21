@@ -3,24 +3,56 @@
 
 .weather__item {
   background-color: $bgShadowColor;
+  padding: 15px 30px 21px 30px;
+  max-width: 320px;
+  border-radius: 20px;
+}
+.weather-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 .weather__text {
   @include text();
   &--lg {
     @include text(24px);
+    margin-bottom: 10px;
+    display: block;
+    text-align: center;
   }
   &--xl {
     @include text(32px);
+    display: block;
+    text-align: center;
   }
 }
 .weather__btn {
   @include accent-btn();
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .day {
   margin-top: 15px;
   margin-bottom: 22px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   &__date {
     @include text();
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 17px;
+      background-color: $textColor;
+      position: absolute;
+      top: 0;
+      right: -13px;
+    }
   }
   &__weekday {
     @include text();
@@ -51,4 +83,33 @@
   &--tiny {
     @include accent-btn(25px, 8px);
   }
+}
+.weather-card__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.weather-card__item {
+  width: 30px;
+  display: flex;
+  align-content: inherit;
+  justify-content: center;
+  & button {
+    width: 30px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img {
+      width: 30px;
+    }
+  }
+}
+.weather-card__btn {
+  width: 99px;
+  text-wrap: nowrap;
+  @include accent-btn(25px, 8px);
 }
