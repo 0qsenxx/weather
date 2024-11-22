@@ -1,11 +1,23 @@
+@import '../../sass/utils/_vars.module.scss';
+@import '../../sass/utils/_mixins.module.scss';
+
 .weather {
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  @media screen and (min-width: $tabPoint) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
 }
 
 .weather__list {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   // gap: 90px;
 }

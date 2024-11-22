@@ -2,6 +2,7 @@ import { useWeather } from 'contexts/weatherContext';
 import HeartIcon from '../../imgs/weatherCardIcons/heart.svg';
 import DeleteIcon from '../../imgs/weatherCardIcons/delete.svg';
 import RefreshIcon from '../../imgs/weatherCardIcons/refresh.svg';
+import WeatherIcon from '../../imgs/icons/cloud1snow.png';
 import css from './WeatherCard.module.scss';
 
 const WeatherCard = () => {
@@ -32,7 +33,7 @@ const WeatherCard = () => {
         >{`${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}`}</p>
         <p className={css.day__weekday}>{weekdays[currentDate.getDay()]}</p>
       </div>
-      <img src={''} alt={''} className={css.weather__icon} />
+      <img src={WeatherIcon} alt={''} className={css.weather__icon} />
       <p className={css['weather__text--xl']}>22°C</p>
       <ul className={css['weather-card__list']}>
         <li className={css['weather-card__item']}>
