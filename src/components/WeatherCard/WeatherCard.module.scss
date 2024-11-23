@@ -3,100 +3,174 @@
 
 .weather__item {
   background-color: $bgShadowColor;
-  padding: 15px 30px 21px 30px;
-  max-width: 320px;
   border-radius: 20px;
+  width: 293px;
+  padding: 15px 15px 20px 15px;
+  @media screen and (min-width: $tabPoint) {
+    padding: 12px 25px 17px 16px;
+    width: 262px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    padding: 15px 30px 21px 30px;
+    width: 320px;
+  }
 }
 .weather-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  @media screen and (min-width: $tabPoint) {
+    margin-bottom: 11px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    margin-bottom: 15px;
+  }
 }
 .weather__text {
-  @include text();
+  @include text(12px);
   &--lg {
-    @include text(24px);
-    margin-bottom: 10px;
+    @include text(20px);
+    margin-bottom: 11px;
     display: block;
     text-align: center;
   }
   &--xl {
-    @include text(32px);
+    @include text(24px);
     display: block;
     text-align: center;
   }
+  @media screen and (min-width: $tabPoint) {
+    @include text(12px);
+    &--lg {
+      @include text(20px);
+      margin-bottom: 8px;
+    }
+    &--xl {
+      @include text(24px);
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    @include text();
+    &--lg {
+      @include text(24px);
+      margin-bottom: 10px;
+    }
+    &--xl {
+      @include text(32px);
+    }
+  }
 }
 .weather__btn {
-  @include accent-btn();
+  @include accent-btn(18px, 8px, 9px);
   display: block;
   margin-left: auto;
   margin-right: auto;
+  @media screen and (min-width: $pcPoint) {
+    @include accent-btn();
+  }
 }
 .day {
-  margin-top: 15px;
-  margin-bottom: 22px;
+  margin-top: 12px;
+  margin-bottom: 24px;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   &__date {
-    @include text();
+    @include text(12px);
     position: relative;
-    &::after {
-      content: '';
-      display: block;
-      width: 1px;
-      height: 17px;
-      background-color: $textColor;
-      position: absolute;
-      top: 0;
-      right: -13px;
-    }
   }
   &__weekday {
-    @include text();
+    @include text(12px);
+  }
+  @media screen and (min-width: $tabPoint) {
+    margin-bottom: 27px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    margin-top: 15px;
+    margin-bottom: 22px;
+    &__date {
+      @include text();
+    }
+    &__weekday {
+      @include text();
+    }
   }
 }
 .weather__icon {
-  width: 120px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.menu__item {
-  width: 30px;
-  &:first-child {
-    margin-right: 16px;
+  width: 83px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  @media screen and (min-width: $tabPoint) {
+    width: 76px;
   }
-  &:nth-child(3) {
-    margin-right: 37px;
-    margin-left: 38px;
-    width: auto;
+  @media screen and (min-width: $pcPoint) {
+    width: 120px;
+    margin-bottom: 15px;
   }
 }
-.menu__btn {
-  &--tiny {
-    @include accent-btn(25px, 8px);
-  }
-}
+// .menu {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .menu__item {
+//   width: 24px;
+//   &:first-child {
+//     margin-right: 14px;
+//   }
+//   &:nth-child(3) {
+//     margin-right: 27px;
+//     margin-left: 32px;
+//     width: auto;
+//   }
+//   @media screen and (min-width: $tabPoint) {
+//     &:first-child {
+//       margin-right: 14px;
+//     }
+//     &:nth-child(3) {
+//       margin-right: 30px;
+//       margin-left: 32px;
+//     }
+//   }
+//   @media screen and (min-width: $pcPoint) {
+//     width: 30px;
+//     &:first-child {
+//       margin-right: 16px;
+//     }
+//     &:nth-child(3) {
+//       margin-right: 37px;
+//       margin-left: 38px;
+//     }
+//   }
+// }
+// .menu__btn {
+//   &--tiny {
+//     @include accent-btn(25px, 8px);
+//   }
+// }
 .weather-card__list {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 40px;
+  margin-top: 44px;
+  @media screen and (min-width: $tabPoint) {
+    margin-top: 35px;
+  }
+  @media screen and (min-width: $pcPoint) {
+    margin-top: 40px;
+  }
 }
 .weather-card__item {
-  width: 30px;
+  width: 24px;
   display: flex;
   align-content: inherit;
   justify-content: center;
   & button {
-    width: 30px;
+    width: 24px;
     background-color: transparent;
     outline: none;
     border: none;
@@ -104,12 +178,30 @@
     align-items: center;
     justify-content: center;
     & img {
+      width: 24px;
+    }
+  }
+  @media screen and (min-width: $pcPoint) {
+    width: 30px;
+    & button {
       width: 30px;
+      & img {
+        width: 30px;
+      }
     }
   }
 }
+
 .weather-card__btn {
-  width: 99px;
+  width: 84px;
   text-wrap: nowrap;
-  @include accent-btn(25px, 8px);
+  @include accent-btn(20px, 8px, 9px);
+  @media screen and (min-width: $tabPoint) {
+    width: 81px;
+    @include accent-btn(25px, 8px, 9px);
+  }
+  @media screen and (min-width: $pcPoint) {
+    width: 99px;
+    @include accent-btn(25px, 8px, 10px);
+  }
 }
