@@ -5,8 +5,8 @@ import RefreshIcon from '../../imgs/weatherCardIcons/refresh.svg';
 import WeatherIcon from '../../imgs/icons/cloud1snow.png';
 import css from './WeatherCard.module.scss';
 
-const WeatherCard = () => {
-  const currentDate = new Date();
+const WeatherCard = ({ temp, date, city, country, cb, icon, description }) => {
+  const currentDate = new Date(date);
   const weekdays = [
     'Sunday',
     'Monday',
@@ -20,21 +20,27 @@ const WeatherCard = () => {
   return (
     <li className={css.weather__item}>
       <div className={css['weather-box']}>
-        <p className={css.weather__text}>Prague</p>
-        <p className={css.weather__text}>Czech Republic</p>
+        <p className={css.weather__text}>{city}</p>
+        <p className={css.weather__text}>{country}</p>
       </div>
-      <time className={css['weather__text--lg']}>14:00</time>
-      <button type="button" className={css.weather__btn}>
+      <time className={css['weather__text--lg']}>
+        {new Date(date).getHours()}:00
+      </time>
+      <button type="button" className={css.weather__btn} onClick={cb}>
         Hourly forecast
       </button>
       <div className={css.day}>
-        <p
-          className={css.day__date}
-        >{`${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}`}</p>
+        <p className={css.day__date}>{`${currentDate.getDate()}.${
+          currentDate.getMonth() + 1
+        }.${currentDate.getFullYear()}`}</p>
         <p className={css.day__weekday}>{weekdays[currentDate.getDay()]}</p>
       </div>
-      <img src={WeatherIcon} alt={''} className={css.weather__icon} />
-      <p className={css['weather__text--xl']}>22°C</p>
+      <img
+        src={icon.replaceAll('64', '128')}
+        alt={description}
+        className={css.weather__icon}
+      />
+      <p className={css['weather__text--xl']}>{Math.round(temp)}°C</p>
       <ul className={css['weather-card__list']}>
         <li className={css['weather-card__item']}>
           <button className={css['weather__btn--xs']} type="button">
