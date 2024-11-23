@@ -7,6 +7,7 @@ import WeatherChart from './WeatherChart/WeatherChart';
 import Forecast from './Forecast/Forecast';
 import Pets from './Pets/Pets';
 import Nature from './Nature/Nature';
+import Footer from './Footer/Footer';
 import { WeatherContext, useWeather } from 'contexts/weatherContext';
 import getWeather from 'utils/getWeather';
 import { createContext, useEffect, useState } from 'react';
@@ -52,7 +53,7 @@ export const App = () => {
       )}
       <Pets />
       <Nature />
-      {/* <Forecast /> */}
+      <Footer/ >
     </WeatherContext.Provider>
   );
 };

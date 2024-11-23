@@ -9,7 +9,7 @@ const Pets = () => {
 
 
     return (
-        <>
+        <section className={css.pets}>
             <div className="container">
                 
                 <h1 className={css.pets__title}>Interacting with our pets</h1>
@@ -38,7 +38,7 @@ const Pets = () => {
 
                 <button type='button' className={css.pets__btn}>See more</button>
             </div>
-        </>
+        </section>
     );
 };
 
