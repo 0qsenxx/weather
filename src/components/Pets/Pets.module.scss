@@ -1,10 +1,18 @@
-.pets__title {
+.pets {
     display: none;
-    @media (min-width: 1170px) {
+    @media  (min-width: 1170px) {
         display: block;
+
+    }
+}
+
+.pets__title {
+    
+    @media (min-width: 1170px) {
+        
     margin-top: 80px;
     color: #000;
-    font-family: Montserrat;
+   
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -13,7 +21,7 @@
 }
 
 .pets__list {
-    display: none;
+    
     @media (min-width: 1170px) {
         display: flex;
         margin-top: 40px;
@@ -24,9 +32,9 @@
 }
 
 // .pets__list .container {
-//     display: none;
+//     
 //     @media (min-width: 1170px) {
-//       display: block;
+//       
 //         }
 // }
 // .pets__item {}
@@ -42,7 +50,7 @@
 .pets__text {
     margin-top: 20px;
     color: #000;
-    font-family: Montserrat;
+   
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -50,12 +58,12 @@
 }
 
 .pets__btn {
-    display: none;
+    
     @media (min-width: 1170px) {
-        display: block;
+        
     border: none;
     color: #000;
-    font-family: Montserrat;
+   
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
