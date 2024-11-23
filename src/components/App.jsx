@@ -26,10 +26,12 @@ export const App = () => {
   return (
     <WeatherContext.Provider value={contextValue}>
       <Header />
+      <Forecast />
       <Hero setLocation={setLocation} />
       <WeatherList />
       <Pets />
       <Nature />
+      {/* <Forecast /> */}
     </WeatherContext.Provider>
   );
 };
