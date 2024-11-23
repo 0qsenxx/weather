@@ -1,8 +1,9 @@
 import { useCallback, useState } from 'react';
 import SearchIcon from '../../imgs/search.png';
 import css from './Hero.module.scss';
+import { useWeather } from 'contexts/weatherContext';
 
-const Hero = () => {
+const Hero = ({ setLocation }) => {
   const currentDate = new Date();
   const weekdays = [
     'Sunday',
@@ -27,6 +28,12 @@ const Hero = () => {
     'November',
     'December',
   ];
+
+  const setLocationFromInputValue = evt => {
+    evt.preventDefault();
+    setLocation(evt.target.elements.location.value);
+  };
+
   return (
     <section className={css.hero}>
       <div className={'container'}>
@@ -54,7 +61,10 @@ const Hero = () => {
             </p>
           </li>
         </ul>
-        <form className={css['hero__form']}>
+        <form
+          className={css['hero__form']}
+          onSubmit={setLocationFromInputValue}
+        >
           <input
             className={css.hero__input}
             placeholder="Search location..."
