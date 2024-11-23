@@ -14,21 +14,43 @@ import { createContext, useEffect, useState } from 'react';
 
 export const App = () => {
   const [location, setLocation] = useState('London');
-  const contextValue = getWeather(location);
+  const [weather, setWeather] = useState({});
+  const [isDetailed, setIsDetailed] = useState(false);
+  // const contextValue = getWeather(location);
 
-  // useEffect(() => {
-  //   const contextValue = getWeather(location)
-  // }, [location]);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getWeather();
+      setWeather(data);
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const newWeather = await getWeather(location);
+      setWeather(newWeather);
+    };
+    getData();
+  }, [location]);
 
   // setTimeout(() => {
   //   console.log(location)
   // }, 10000)
 
   return (
-    <WeatherContext.Provider value={contextValue}>
+    <WeatherContext.Provider value={{ text: 'hello00' }}>
       <Header />
+      <Forecast />
       <Hero setLocation={setLocation} />
-      <WeatherList />
+      <WeatherList weather={weather} setIsDetailed={setIsDetailed} />
+      {isDetailed && (
+        <>
+          <WeatherInfo />
+          <WeatherChart />
+          <Forecast />
+        </>
+      )}
       <Pets />
       <Nature />
       <Footer/ >
