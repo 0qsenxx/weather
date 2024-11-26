@@ -26,7 +26,7 @@ const WeatherCard = ({ temp, date, city, country, cb, icon, description }) => {
       <time className={css['weather__text--lg']}>
         {new Date(date).getHours()}:00
       </time>
-      <button type="button" className={css.weather__btn} onClick={cb}>
+      <button type="button" className={css.weather__btn}>
         Hourly forecast
       </button>
       <div className={css.day}>
@@ -63,7 +63,11 @@ const WeatherCard = ({ temp, date, city, country, cb, icon, description }) => {
         <li
           className={`${css['weather-card__item']} ${css['weather-card__btn']}`}
         >
-          <button className={css['weather__btn--tiny']} type="button">
+          <button
+            className={css['weather__btn--tiny']}
+            type="button"
+            onClick={cb}
+          >
             See more
           </button>
         </li>

@@ -11,13 +11,15 @@ import Footer from './Footer/Footer';
 import { WeatherContext, useWeather } from 'contexts/weatherContext';
 import getWeather from 'utils/getWeather';
 import { createContext, useEffect, useState } from 'react';
+import { useCallback } from 'react';
 
 export const App = () => {
   const [location, setLocation] = useState('London');
   const [weather, setWeather] = useState({});
   const [isDetailed, setIsDetailed] = useState(false);
+  const [details, setDetails] = useState({});
   // const contextValue = getWeather(location);
-
+  console.log(weather);
   useEffect(() => {
     const getData = async () => {
       const data = await getWeather();
@@ -34,6 +36,15 @@ export const App = () => {
     getData();
   }, [location]);
 
+  const getDetails = useCallback(async e => {
+    const currentElem = e.target.parentNode;
+    const index = Array.from(e.target.parentNode.parentNode.children).findIndex(
+      elem => elem === currentElem
+    );
+    const detailedWeather = weather.forecast.forecastday[index];
+    setIsDetailed(true);
+    setDetails(detailedWeather);
+  });
   // setTimeout(() => {
   //   console.log(location)
   // }, 10000)
@@ -42,17 +53,17 @@ export const App = () => {
     <WeatherContext.Provider value={{ text: 'hello00' }}>
       <Header />
       <Hero setLocation={setLocation} />
-      <WeatherList weather={weather} setIsDetailed={setIsDetailed} />
+      <WeatherList weather={weather} setIsDetailed={getDetails} />
       {isDetailed && (
         <>
-          <WeatherInfo />
+          <WeatherInfo data={details.day} exactData={details.hour[14]} />
           <WeatherChart />
           <Forecast />
         </>
       )}
       <Pets />
       <Nature />
-      <Footer/>
+      <Footer></Footer>
     </WeatherContext.Provider>
   );
 };
