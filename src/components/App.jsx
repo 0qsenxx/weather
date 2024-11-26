@@ -41,7 +41,6 @@ export const App = () => {
   return (
     <WeatherContext.Provider value={{ text: 'hello00' }}>
       <Header />
-      <Forecast />
       <Hero setLocation={setLocation} />
       <WeatherList weather={weather} setIsDetailed={setIsDetailed} />
       {isDetailed && (
@@ -53,7 +52,7 @@ export const App = () => {
       )}
       <Pets />
       <Nature />
-      <Footer/ >
+      <Footer/>
     </WeatherContext.Provider>
   );
 };
