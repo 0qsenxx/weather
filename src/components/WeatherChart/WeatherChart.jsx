@@ -44,13 +44,14 @@ ChartJS.register(
   Legend
 );
 
-const WeatherChart = () => {
+const WeatherChart = ({ chartDetails }) => {
   const { width } = useWindowSize();
   const chartDimensions = {
     width: '100%',
     height: width >= 654 ? 300 : 200,
     displayLabels: width >= 654 ? true : false,
   };
+  console.log(chartDetails);
 
   const data = {
     labels: [
@@ -77,10 +78,7 @@ const WeatherChart = () => {
     datasets: [
       {
         label: 'Temperature (°C)',
-        data: [
-          15, 13, 12, 12, 12, 11, 11, 11, 12, 14, 16, 18, 20, 22, 23, 24, 24,
-          24, 24,
-        ],
+        data: chartDetails.map(temperature => temperature.temp_c),
         borderColor: '#f4a261',
         backgroundColor: 'rgba(244, 162, 97, 0.2)',
         fill: false,
