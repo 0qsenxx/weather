@@ -1,8 +1,8 @@
-import css from './Header.module.scss';
-import { useState } from 'react';
-import logo from './logo.png';
-import user from './user.png';
-import ModalLogin from 'components/modalLogin/ModalLogin';
+import css from "./Header.module.scss";
+import { useState } from "react";
+import logo from "./logo.png";
+import user from "./user.png";
+import ModalLogin from "../modalLogin/ModalLogin";
 // console.log(JSON.parse(localStorage.getItem('users'))[0].name);
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
@@ -17,12 +17,12 @@ const Header = () => {
 
   function isOpenClickModal(e) {
     // setOpen(!isOpen);
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       setOpen(!isOpen);
     }
   }
 
-  document.addEventListener('keydown', isOpenClickModal);
+  document.addEventListener("keydown", isOpenClickModal);
 
   function isOpenBurgerF() {
     setOpenBurger(!isOpenBurger);
@@ -136,13 +136,13 @@ const Header = () => {
           {/* // }, JSON.parse(localStorage.getItem("users")) )} */}
         </div>
       ) : (
-        console.log('hide')
+        console.log("hide")
       )}
 
       {isOpen ? (
         <ModalLogin open={isOpenModal}></ModalLogin>
       ) : (
-        console.log('hide')
+        console.log("hide")
       )}
     </>
   );

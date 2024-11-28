@@ -1,20 +1,20 @@
 // import Nature from './Nature/Nature';
-import Header from './Header/Header';
-import Hero from './Hero/Hero';
-import WeatherList from './WeatherList/WeatherList';
-import WeatherInfo from './WeatherInfo/WeatherInfo';
-import WeatherChart from './WeatherChart/WeatherChart';
-import Forecast from './Forecast/Forecast';
-import Pets from './Pets/Pets';
-import Nature from './Nature/Nature';
-import Footer from './Footer/Footer';
-import { WeatherContext, useWeather } from 'contexts/weatherContext';
-import getWeather from 'utils/getWeather';
-import { createContext, useEffect, useState } from 'react';
-import { useCallback } from 'react';
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
+import WeatherList from "./components/WeatherList/WeatherList";
+import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
+import WeatherChart from "./components/WeatherChart/WeatherChart";
+import Forecast from "./components/Forecast/Forecast";
+import Pets from "./components/Pets/Pets";
+import Nature from "./components/Nature/Nature";
+import Footer from "./components/Footer/Footer";
+import { WeatherContext, useWeather } from "./contexts/weatherContext";
+import getWeather from "./utils/getWeather";
+import { createContext, useEffect, useState } from "react";
+import { useCallback } from "react";
 
 export const App = () => {
-  const [location, setLocation] = useState('London');
+  const [location, setLocation] = useState("London");
   const [weather, setWeather] = useState({});
   const [isDetailed, setIsDetailed] = useState(false);
   const [details, setDetails] = useState({});
@@ -36,10 +36,10 @@ export const App = () => {
     getData();
   }, [location]);
 
-  const getDetails = useCallback(async e => {
+  const getDetails = useCallback(async (e) => {
     const currentElem = e.target.parentNode;
     const index = Array.from(e.target.parentNode.parentNode.children).findIndex(
-      elem => elem === currentElem
+      (elem) => elem === currentElem
     );
     const detailedWeather = weather.forecast.forecastday[index];
     setIsDetailed(true);
@@ -50,7 +50,7 @@ export const App = () => {
   // }, 10000)
 
   return (
-    <WeatherContext.Provider value={{ text: 'hello00' }}>
+    <WeatherContext.Provider value={{ text: "hello00" }}>
       <Header />
       <Hero setLocation={setLocation} />
       <WeatherList weather={weather} setIsDetailed={getDetails} />

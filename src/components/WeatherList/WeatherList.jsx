@@ -1,6 +1,6 @@
-import WeatherCard from 'components/WeatherCard/WeatherCard';
+import WeatherCard from '../WeatherCard/WeatherCard';
 import css from './WeatherList.module.scss';
-import { useWeather } from 'contexts/weatherContext';
+// import { useWeather } from 'contexts/weatherContext';
 
 const WeatherList = ({ weather, setIsDetailed }) => {
   // console.log(weather);

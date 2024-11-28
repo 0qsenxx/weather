@@ -1,4 +1,4 @@
-import { useWeather } from 'contexts/weatherContext';
+// import { useWeather } from 'contexts/weatherContext';
 import HeartIcon from '../../imgs/weatherCardIcons/heart.svg';
 import DeleteIcon from '../../imgs/weatherCardIcons/delete.svg';
 import RefreshIcon from '../../imgs/weatherCardIcons/refresh.svg';

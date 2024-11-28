@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import SearchIcon from '../../imgs/search.png';
 import css from './Hero.module.scss';
-import { useWeather } from 'contexts/weatherContext';
+// import { useWeather } from 'contexts/weatherContext';
 
 const Hero = ({ setLocation }) => {
   const currentDate = new Date();

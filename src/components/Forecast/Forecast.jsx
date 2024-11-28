@@ -1,4 +1,4 @@
-import ForecastItem from 'components/ForecastItem/ForecastItem';
+import ForecastItem from '../ForecastItem/ForecastItem';
 import styles from './Forecast.module.scss';
 
 const Forecast = () => {
