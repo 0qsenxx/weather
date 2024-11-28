@@ -57,7 +57,7 @@ export const App = () => {
       {isDetailed && (
         <>
           <WeatherInfo data={details.day} exactData={details.hour[14]} />
-          <WeatherChart />
+          <WeatherChart chartDetails={details.hour} />
           <Forecast />
         </>
       )}
