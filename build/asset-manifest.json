@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/react-homework-template/static/css/main.fdb1c701.css",
+    "main.js": "/react-homework-template/static/js/main.d44768bd.js",
+    "static/media/hero.jpg": "/react-homework-template/static/media/hero.c52e269330cee5c5afc5.jpg",
+    "static/media/Rectangle8.png": "/react-homework-template/static/media/Rectangle8.960cd4962b8198987001.png",
+    "static/media/nature3.jpg": "/react-homework-template/static/media/nature3.ae86e507138964b87286.jpg",
+    "static/media/Rectangle7.png": "/react-homework-template/static/media/Rectangle7.03fcdfb41b675583835b.png",
+    "static/media/Rectangle9.png": "/react-homework-template/static/media/Rectangle9.84e3ff7ef6d3852ea94e.png",
+    "static/media/nature2.jpg": "/react-homework-template/static/media/nature2.aa2abaf8b07bab2bc8bc.jpg",
+    "static/media/Rectangle6.png": "/react-homework-template/static/media/Rectangle6.7da143d259f1e62c5213.png",
+    "static/media/nature1.jpg": "/react-homework-template/static/media/nature1.dc90609ca0f1f5c4c790.jpg",
+    "static/media/nature4.jpg": "/react-homework-template/static/media/nature4.8c7ea0eca47f35e60212.jpg",
+    "static/media/heart.svg": "/react-homework-template/static/media/heart.d71e396888b2c81226f45faf7892a410.svg",
+    "static/media/nature5.jpg": "/react-homework-template/static/media/nature5.f4877e9eb368a21c29ec.jpg",
+    "static/media/cloud1snow.png": "/react-homework-template/static/media/cloud1snow.d218f6878c88d4ff3525.png",
+    "static/media/refresh.svg": "/react-homework-template/static/media/refresh.85ede403f8d5f7441c2b19ed4fa97333.svg",
+    "static/media/lightRain.png": "/react-homework-template/static/media/lightRain.d0f0ab30d72ba84e9383.png",
+    "static/media/delete.svg": "/react-homework-template/static/media/delete.af420d81d11911dbc0ad08dba2186b0b.svg",
+    "index.html": "/react-homework-template/index.html",
+    "main.fdb1c701.css.map": "/react-homework-template/static/css/main.fdb1c701.css.map",
+    "main.d44768bd.js.map": "/react-homework-template/static/js/main.d44768bd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdb1c701.css",
+    "static/js/main.d44768bd.js"
+  ]
+}
