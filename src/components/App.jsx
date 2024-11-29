@@ -58,7 +58,7 @@ export const App = () => {
         <>
           <WeatherInfo data={details.day} exactData={details.hour[14]} />
           <WeatherChart chartDetails={details.hour} />
-          <Forecast />
+          <Forecast location={location} />
         </>
       )}
       <Pets />
