@@ -1,10 +1,11 @@
 import css from './Header.module.scss';
 import { useState } from 'react';
 import logo from "./logo.png";
-import user from "./user.png";
+import userImg from "./user.png";
 import ModalLogin from 'components/modalLogin/ModalLogin';
 // console.log(window.style.width);
-
+// localStorage.clear();
+console.log(JSON.parse(localStorage.getItem("user")));
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenBurger, setOpenBurger] = useState(false);
@@ -29,6 +30,30 @@ const Header = () => {
     setOpenBurger(!isOpenBurger);
   };
 
+  const user = () => {
+
+
+    if (localStorage.getItem("user") !== null) {
+      return (
+        <>
+        <p>{JSON.parse(localStorage.getItem("user")).name}</p>
+        </>
+      );
+    } else {
+      return (
+        <>
+            <button
+            type="button"
+            className={css.signup__button}
+            onClick={isOpenModal}
+          >
+            Sign Up
+          </button>
+        </>
+      );
+    }
+  };
+
   return (
     <>
       <header className={css.header}>
@@ -51,7 +76,7 @@ const Header = () => {
 
             }
           </button>
-         
+
           <nav className={css.header__nav}>
             <ul className={css.header__navList}>
               <li className={css.header__navItem}>
@@ -68,6 +93,39 @@ const Header = () => {
 
 
           <div className={css.header__signup}>
+            {user()}
+
+            {/* <button
+              type="button"
+              className={css.signup__button}
+              onClick={isOpenModal}
+            >
+              Sign Up
+            </button> */}
+            <div className={css.signup__user}>
+              <img src={userImg} />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {isOpenBurger ?
+        <div className={css.burger}>
+          <ul className={css.header__navList}>
+            <li className={css.header__navItem}>
+              <a className={css.header__navPage}>Who we are</a>
+            </li>
+            <li className={css.header__navItem}>
+              <a className={css.header__navPage}>Contacts</a>
+            </li>
+            <li className={css.header__navItem}>
+              <a className={css.header__navPage}>Menu</a>
+            </li>
+          </ul>
+          <div className={css.burger__signup}>
+            <div className={css.signup__user}>
+              <img src={userImg} />
+            </div>
             <button
               type="button"
               className={css.signup__button}
@@ -75,45 +133,14 @@ const Header = () => {
             >
               Sign Up
             </button>
-            <div className={css.signup__user}>
-              <img src={user} />
-            </div>
+
           </div>
         </div>
-      </header>
 
-      {isOpenBurger ?
-             <div className={css.burger}>
-             <ul className={css.header__navList}>
-               <li className={css.header__navItem}>
-                 <a className={css.header__navPage}>Who we are</a>
-               </li>
-               <li className={css.header__navItem}>
-                 <a className={css.header__navPage}>Contacts</a>
-               </li>
-               <li className={css.header__navItem}>
-                 <a className={css.header__navPage}>Menu</a>
-               </li>
-             </ul>
-             <div className={css.burger__signup}>
-             <div className={css.signup__user}>
-                 <img src={user} />
-               </div>
-               <button
-                 type="button"
-                 className={css.signup__button}
-                 onClick={isOpenModal}
-               >
-                 Sign Up
-               </button>
-              
-             </div>
-           </div>
+        :
+        console.log("hide")
 
-            :
-            console.log("hide")
-
-          }
+      }
 
       {isOpen ? (
         <ModalLogin open={isOpenModal}></ModalLogin>
