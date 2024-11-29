@@ -12,12 +12,22 @@ import { WeatherContext, useWeather } from 'contexts/weatherContext';
 import getWeather from 'utils/getWeather';
 import { createContext, useEffect, useState } from 'react';
 import { useCallback } from 'react';
+import ModalLogin from './modalLogin/ModalLogin';
 
 export const App = () => {
   const [location, setLocation] = useState('London');
   const [weather, setWeather] = useState({});
   const [isDetailed, setIsDetailed] = useState(false);
   const [details, setDetails] = useState({});
+  const [isLogin, setIsLogin] = useState(false);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem('userData'))) {
+      setIsLogin(true);
+    }
+  }, []);
+  // console.log(isLogin);
+
   // const contextValue = getWeather(location);
   console.log(weather);
   useEffect(() => {
@@ -51,7 +61,8 @@ export const App = () => {
 
   return (
     <WeatherContext.Provider value={{ text: 'hello00' }}>
-      <Header />
+      {/* {isLogin ? true : <ModalLogin />} */}
+      <Header isLogin={isLogin} />
       <Hero setLocation={setLocation} />
       <WeatherList weather={weather} setIsDetailed={getDetails} />
       {isDetailed && (

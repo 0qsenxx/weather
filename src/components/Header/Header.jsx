@@ -4,9 +4,14 @@ import logo from './logo.png';
 import user from './user.png';
 import ModalLogin from 'components/modalLogin/ModalLogin';
 // console.log(JSON.parse(localStorage.getItem('users'))[0].name);
-const Header = () => {
+const Header = ({ isLogin }) => {
   const [isOpen, setOpen] = useState(false);
   const [isOpenBurger, setOpenBurger] = useState(false);
+  const [username, setUsername] = useState(
+    localStorage.getItem('userData')
+      ? JSON.parse(localStorage.getItem('userData')).username
+      : ''
+  );
 
   function isOpenModal() {
     setOpen(!isOpen);
@@ -33,7 +38,7 @@ const Header = () => {
       <header className={css.header}>
         <div className={css.container}>
           <div className={css.header__logo}>
-            <img src={logo} />
+            <img src={logo} alt="logo" />
           </div>
 
           <button
@@ -78,27 +83,44 @@ const Header = () => {
           <nav className={css.header__nav}>
             <ul className={css.header__navList}>
               <li className={css.header__navItem}>
-                <a className={css.header__navPage}>Who we are</a>
+                <a className={css.header__navPage} href="../App.jsx">
+                  Who we are
+                </a>
               </li>
               <li className={css.header__navItem}>
-                <a className={css.header__navPage}>Contacts</a>
+                <a className={css.header__navPage} href="../App.jsx">
+                  Contacts
+                </a>
               </li>
               <li className={css.header__navItem}>
-                <a className={css.header__navPage}>Menu</a>
+                <a className={css.header__navPage} href="../App.jsx">
+                  Menu
+                </a>
               </li>
             </ul>
           </nav>
 
           <div className={css.header__signup}>
-            <button
+            {username ? (
+              <p>{JSON.parse(localStorage.getItem('userData')).username}</p>
+            ) : (
+              <button
+                type="button"
+                className={css.signup__button}
+                onClick={isOpenModal}
+              >
+                Sign Up
+              </button>
+            )}
+            {/* <button
               type="button"
               className={css.signup__button}
               onClick={isOpenModal}
             >
               Sign Up
-            </button>
+            </button> */}
             <div className={css.signup__user}>
-              <img src={user} />
+              <img src={user} alt="userImg" />
             </div>
           </div>
         </div>
@@ -108,13 +130,19 @@ const Header = () => {
         <div className={css.burger}>
           <ul className={css.header__navList}>
             <li className={css.header__navItem}>
-              <a className={css.header__navPage}>Who we are</a>
+              <a className={css.header__navPage} href="../App.jsx">
+                Who we are
+              </a>
             </li>
             <li className={css.header__navItem}>
-              <a className={css.header__navPage}>Contacts</a>
+              <a className={css.header__navPage} href="../App.jsx">
+                Contacts
+              </a>
             </li>
             <li className={css.header__navItem}>
-              <a className={css.header__navPage}>Menu</a>
+              <a className={css.header__navPage} href="../App.jsx">
+                Menu
+              </a>
             </li>
           </ul>
 
@@ -140,7 +168,7 @@ const Header = () => {
       )}
 
       {isOpen ? (
-        <ModalLogin open={isOpenModal}></ModalLogin>
+        <ModalLogin open={isOpenModal} setUsername={setUsername}/>
       ) : (
         console.log('hide')
       )}
