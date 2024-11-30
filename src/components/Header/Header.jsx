@@ -12,8 +12,7 @@ const Header = ({ isLogin }) => {
       ? JSON.parse(localStorage.getItem('userData')).username
       : ''
   );
-
-  function isOpenModal() {
+    function isOpenModal() {
     setOpen(!isOpen);
     // if (e.key === "Escape") {
     //   document.addEventListener("keydown", setOpen(!isOpen));
