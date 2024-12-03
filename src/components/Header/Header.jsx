@@ -153,13 +153,18 @@ const Header = ({ isLogin }) => {
             <div className={css.signup__user}>
               <img src={user} />
             </div>
-            <button
+            {username ? (
+              <p>{JSON.parse(localStorage.getItem('userData')).username}</p>
+            ) : (
+              <button
               type="button"
               className={css.signup__button}
               onClick={isOpenModal}
             >
               Sign Up
             </button>
+            )}
+          
           </div>
           {/* // }, JSON.parse(localStorage.getItem("users")) )} */}
         </div>
